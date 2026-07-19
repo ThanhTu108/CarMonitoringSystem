@@ -5,4 +5,4 @@ ColumnLimit: 100
 AllowShortFunctionsOnASingleLine: None
 BreakBeforeBraces: Attach
 NamespaceIndentation: All
-AccessModifierOffset: 0
+AccessModifierOffset: -4
