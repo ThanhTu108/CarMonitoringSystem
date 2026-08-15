@@ -7,4 +7,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_TESTING "build test" ON)
 
-add_subdirectory(src/common)
+# Add subdirectories for each component
+# add_subdirectory(src/common)
+
+
+add_executable(CarMonitoringSystem main.cpp)
+
+target_link_libraries(CarMonitoringSystem PRIVATE hmi_lib)

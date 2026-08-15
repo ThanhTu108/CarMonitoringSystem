@@ -12,10 +12,10 @@ namespace spdlog {
 
 class Logger {
 private:
-    enum class LogLevel { INFO = 0, ERROR, DEBUG, WARN };
+    enum class LogLevel { DEBUG = 0, INFO, WARN, ERROR, CRITICAL };
     void log_impl(LogLevel level, std::string_view fmt_str,
                   fmt::format_args args, const std::source_location& loc);
-    std::shared_ptr<spdlog::logger> spd_logger;
+    static std::shared_ptr<spdlog::logger> spd_logger;
 
 public:
     Logger(std::string_view path_file);
@@ -46,7 +46,7 @@ public:
         const std::source_location loc = std::source_location::current()) {
         if constexpr (static_cast<int>(Logger::LogLevel::INFO) >=
                       LOG_LEVEL_CMAKE) {
-            log_impl(Logger::LogLevel::INFO, fmt,
+            log_impl(Logger::LogLevel::INFO, fmt::string(fmt),
                      fmt::make_format_args(args...), loc);
         }
     }
