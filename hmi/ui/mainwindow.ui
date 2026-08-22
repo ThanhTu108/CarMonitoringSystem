@@ -6,48 +6,112 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
-    <height>365</height>
+    <width>673</width>
+    <height>487</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QPushButton" name="Dashboard_btn">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>9</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>131</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="_dash_board_btn">
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>DASHBOARD</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="setting_btn">
+      <item>
+       <widget class="QPushButton" name="_camera_btn">
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
         <property name="text">
-         <string>SETTINGS</string>
+         <string>CAMERA</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton">
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
         <property name="text">
-         <string>SYSTEMS</string>
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-   </layout>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="ui_display">
+    <property name="geometry">
+     <rect>
+      <x>159</x>
+      <y>29</y>
+      <width>511</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="dashboard_widget"/>
+    <widget class="QWidget" name="ui_displayPage2_2"/>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>535</width>
+     <width>673</width>
      <height>23</height>
     </rect>
    </property>

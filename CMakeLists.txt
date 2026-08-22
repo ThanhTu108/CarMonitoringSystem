@@ -12,6 +12,6 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 add_subdirectory(hmi)
 
 
-add_executable(CarMonitoringSystem main.cpp)
+add_executable(app main.cpp)
 
-target_link_libraries(CarMonitoringSystem PRIVATE hmi_lib)
+target_link_libraries(app PRIVATE hmi_lib)

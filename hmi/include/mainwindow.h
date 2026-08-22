@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QStackedWidget>
+
+#include "dashboard.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -16,7 +19,9 @@ class MainWindow : public QMainWindow {
 public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
+    void onDashboardClicked();
 
 private:
     Ui::MainWindow* ui;
+    DashBoard* dashboard_window = nullptr;
 };
