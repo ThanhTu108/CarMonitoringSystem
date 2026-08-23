@@ -39,7 +39,7 @@ void VehicleGauge::draw_speed_scale(QPainter& painter) {
 
     QFont font;
     font.setPointSize(9);
-    font.setBold(false);
+    font.setBold(true);
 
     painter.setFont(font);
 
