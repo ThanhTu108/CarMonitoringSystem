@@ -12,11 +12,11 @@ void VehicleGauge::paintEvent(QPaintEvent* event) {
 
     painter.setRenderHint(QPainter::Antialiasing);
     // painter.fillRect(rect(), Qt::black);
-    draw_speed(painter);
+    draw_speed_scale(painter);
     draw_odo(painter);
 }
 
-void VehicleGauge::draw_speed(QPainter& painter) {
+void VehicleGauge::draw_speed_scale(QPainter& painter) {
     const int width = this->width();
     const int height = this->height();
 

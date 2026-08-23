@@ -16,7 +16,7 @@ protected:
     void paintEvent(QPaintEvent* event);
 
 private:
-    void draw_speed(QPainter& painter);
+    void draw_speed_scale(QPainter& painter);
     void draw_odo(QPainter& painter);
 
     double m_speed{0.0};
