@@ -3,8 +3,8 @@
 #include <QMainWindow>
 #include <QStackedWidget>
 
+#include "camera.h"
 #include "dashboard.h"
-
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -24,4 +24,5 @@ public:
 private:
     Ui::MainWindow* ui;
     DashBoard* dashboard_window = nullptr;
+    Camera* camera_window = nullptr;
 };
