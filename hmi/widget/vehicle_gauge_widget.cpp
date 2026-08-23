@@ -83,7 +83,7 @@ void VehicleGauge::draw_odo(QPainter& painter) {
 
 void VehicleGauge::draw_speed_needle(QPainter& painter) {
     // for debug
-    const int m_current_speed = 100;
+    // const int m_current_speed = set_speed();
 
     const int width = this->width();
     const int height = this->height();
@@ -97,7 +97,7 @@ void VehicleGauge::draw_speed_needle(QPainter& painter) {
 
     // Get current speed between 0 - max speed
     const double clamp_speed =
-        qBound(0.0, static_cast<double>(m_current_speed),
+        qBound(0.0, static_cast<double>(current_speed),
                static_cast<double>(max_speed));
 
     // Calculate angle corresponding to speed
@@ -129,4 +129,11 @@ void VehicleGauge::draw_speed_needle(QPainter& painter) {
     painter.drawEllipse(center, 2.0, 2.0);
 
     painter.restore();
+}
+
+void VehicleGauge::set_speed(double speed) {
+    if (current_speed != speed) {
+        current_speed = speed;
+        update();
+    }
 }

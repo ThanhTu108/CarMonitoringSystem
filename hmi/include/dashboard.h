@@ -17,6 +17,14 @@ public:
     explicit DashBoard(QWidget* parent = nullptr);
     ~DashBoard();
 
+    void set_speed(uint32_t speed);
+    void get_speed_can();
+
+signals:
+    void speeds_changed(double speed);
+
 private:
     Ui::DashBoard* ui;
+
+    uint32_t current_speed;
 };

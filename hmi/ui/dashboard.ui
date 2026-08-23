@@ -42,7 +42,7 @@
       <string>ENGINE</string>
      </property>
     </widget>
-    <widget class="VehicleGauge" name="widget" native="true">
+    <widget class="VehicleGauge" name="vehicle_gauge" native="true">
      <property name="geometry">
       <rect>
        <x>20</x>
