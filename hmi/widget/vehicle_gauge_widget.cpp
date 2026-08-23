@@ -13,6 +13,7 @@ void VehicleGauge::paintEvent(QPaintEvent* event) {
     painter.setRenderHint(QPainter::Antialiasing);
     // painter.fillRect(rect(), Qt::black);
     draw_speed_scale(painter);
+    draw_speed_needle(painter);
     draw_odo(painter);
 }
 
@@ -78,4 +79,54 @@ void VehicleGauge::draw_speed_scale(QPainter& painter) {
     }
 }
 void VehicleGauge::draw_odo(QPainter& painter) {
+}
+
+void VehicleGauge::draw_speed_needle(QPainter& painter) {
+    // for debug
+    const int m_current_speed = 100;
+
+    const int width = this->width();
+    const int height = this->height();
+
+    // get center point of circle
+    const QPointF center(width / 2.0, height * 0.53);
+    const double radius = qMin(width, height) * 0.45;
+    constexpr int max_speed = 220;
+    constexpr double start_angle = 225.0;
+    constexpr double sweep_angle = 270.0;
+
+    // Get current speed between 0 - max speed
+    const double clamp_speed =
+        qBound(0.0, static_cast<double>(m_current_speed),
+               static_cast<double>(max_speed));
+
+    // Calculate angle corresponding to speed
+    const double ratio = clamp_speed / max_speed;
+    const double angle =
+        qDegreesToRadians(start_angle - ratio * sweep_angle);
+
+    const double needle_lenghth = radius * 0.55;
+
+    painter.save();
+
+    QPen needle_pen(Qt::red);
+    needle_pen.setWidth(3);
+    needle_pen.setCapStyle(Qt::RoundCap);
+    painter.setPen(needle_pen);
+
+    // Calculate position of needle
+    QPointF needle_tip(center.x() + needle_lenghth * qCos(angle),
+                       center.y() - needle_lenghth * qSin(angle));
+
+    painter.drawLine(center, needle_tip);
+
+    // draw circle at center of needle tip
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(Qt::black);
+    painter.drawEllipse(center, 3.0, 3.0);
+
+    painter.setBrush(Qt::red);
+    painter.drawEllipse(center, 2.0, 2.0);
+
+    painter.restore();
 }

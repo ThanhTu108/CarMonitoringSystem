@@ -3,6 +3,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QWidget>
+#include <QtCore>
 #include <QtMath>
 
 class VehicleGauge : public QWidget {
@@ -18,6 +19,7 @@ protected:
 private:
     void draw_speed_scale(QPainter& painter);
     void draw_odo(QPainter& painter);
+    void draw_speed_needle(QPainter& painter);
 
     double m_speed{0.0};
     double m_odo{0.0};
